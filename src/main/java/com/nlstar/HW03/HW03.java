@@ -23,7 +23,7 @@ public class HW03 {
         driver.findElement(By.xpath("//button[.='Да, всё верно']")).click();
 
         //Клик на "Войти", ждем появления формы авторизации, авторизуемся
-        driver.findElement(By.xpath("////a[@href='/ru/store/login/']")).click(); //Здесь коварная ссылка, т.к. разработчики сделали одинаковые ссылки для веб и мобилки.
+        driver.findElement(By.xpath("//a[@href='/ru/store/login/']")).click(); //Здесь коварная ссылка, т.к. разработчики сделали одинаковые ссылки для веб и мобилки.
         //В этом месте тест падает, исправить не получилось
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[contains(@src, 'login')]")));
         driver.findElement(By.id("login")).sendKeys("914706560559");
