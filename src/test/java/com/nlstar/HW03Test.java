@@ -37,7 +37,7 @@ public class HW03Test {
                 .build()
                 .perform();
         driver.findElement(By.xpath("//div[@class='authorization authorization_login']//a[@href='/ru/store/login/']")).click();
-        Assertions.assertTrue(driver.getCurrentUrl().contains("Войти"));
+        Assertions.assertTrue(driver.findElement(By.xpath("//div[@class='authorization authorization_login']//a[@href='/ru/store/login/']")).isDisplayed());
     }
 
     @Test
@@ -46,7 +46,7 @@ public class HW03Test {
                 .build()
                 .perform();
         driver.findElement(By.xpath("//a[@href='/ru/store/cart']")).click();
-        Assertions.assertTrue(driver.getCurrentUrl().contains("Оформить заказ"));
+        Assertions.assertTrue(driver.findElement(By.xpath("//a[@href='/ru/store/cart']")).isDisplayed());
     }
 
 
