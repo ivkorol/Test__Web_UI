@@ -1,5 +1,6 @@
 package HW06;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
         import org.openqa.selenium.WebDriver;
         import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = MAKEUP_BUTTON_LOCATOR_BY_XPATH)
     private WebElement makeupButton;
 
+    @Step("Клик на раздел Макияж")
     public CartPage clickMakeup() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(MAKEUP_BUTTON_LOCATOR_BY_XPATH)));
         makeupButton.click();
@@ -32,6 +34,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = TENX_CARD_LOCATOR_BY_XPATH)
     private WebElement tenxCard;
 
+    @Step("Клик на карточку товара")
     public CartPage clickTenx() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(TENX_CARD_LOCATOR_BY_XPATH)));
         tenxCard.click();
@@ -43,6 +46,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = ADD_CART_LOCATOR_BY_XPATH)
     private WebElement addCart;
 
+    @Step("Добавить товар в корзину")
     public CartPage clickAddCart() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(ADD_CART_LOCATOR_BY_XPATH)));
         addCart.click();
@@ -54,6 +58,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = CLICK_CART_LOCATOR_BY_XPATH)
     private WebElement clickCart;
 
+    @Step("Перейти в корзину")
     public CartPage clickCart() {
         webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(CLICK_CART_LOCATOR_BY_XPATH)));
         clickCart.click();
@@ -64,6 +69,7 @@ public class CartPage extends BasePage {
     @FindBy(xpath = ADDED_TO_CART_XPATH_LOCATOR)
     private WebElement addedToCartElement;
 
+    @Step("Проверить товар в корзине")
     public CartPage checkTenAddedToCart() {
         webDriverWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath(ADDED_TO_CART_XPATH_LOCATOR)));
         assertThat(addedToCartElement, isDisplayed());

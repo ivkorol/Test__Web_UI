@@ -1,5 +1,6 @@
 package HW06;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,6 +18,7 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = LOGIN_WINDOW_LOCATOR)
     public WebElement loginWindow;
 
+    @Step("Переключиться на окно логина")
     public LoginPage switchToLoginWindow() {
         driver.switchTo().window(String.valueOf((driver.findElement(By.xpath("//class[.='login__inner login__inner_type_login']")))));
         return this;
@@ -43,6 +45,7 @@ public class LoginPage extends BasePage {
         return this;
     }
 
+    @Step("Кликнуть кнопку Войти")
     public MainPage clickLoginButton() {
         try {
             Thread.sleep(1000);

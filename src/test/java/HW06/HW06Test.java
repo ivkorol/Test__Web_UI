@@ -25,13 +25,12 @@ public class HW06Test {
     }
 
     @Test
-    void likeRandomFilmTest() {
+    void tenxInCartTest() {
         new MainPage(driver)
-                .clickLoginButton()
+                .switchToLoginWindow()
                 .fillLogin("914706560559")
                 .fillPassword("773058")
                 .clickLoginButton()
-                .switchToLoginWindow()
                 .clickMakeup()
                 .clickTenx()
                 .clickAddCart()
